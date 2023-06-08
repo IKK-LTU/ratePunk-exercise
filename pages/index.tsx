@@ -5,11 +5,14 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.scss';
 
 import Layout from './layout';
+import ContentContainer from 'components/layout/ContentContainer'
 
 const Home = () => {
   return (
     <main className={styles.container} >
-     <h1> Hello </h1>
+      <ContentContainer>
+        <h1> Hello </h1>
+      </ContentContainer>
     </main>
  
  )
