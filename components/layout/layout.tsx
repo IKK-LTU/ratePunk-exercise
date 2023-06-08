@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 
-import MetaData from '../components/layout/MetaData'
-
+import MetaData from 'components/metadata/MetaData'
+import Navbar from 'components/navbar/Navbar'
 
 export const defaultMetaData = {
   title: 'RATEPUNK',
@@ -18,9 +18,9 @@ const Layout = ({
   return (
     <div>
       <MetaData title={defaultMetaData.title} description={defaultMetaData.description} />
-      
       <div>
-      {children}
+        <Navbar/>
+        {children}
       </div>
     </div>
   )

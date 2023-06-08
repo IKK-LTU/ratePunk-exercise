@@ -1,6 +1,6 @@
-import {ReactNode} from 'react'
+import { ReactNode } from 'react'
 
-import styles from 'contentContainer.module.scss'
+import styles from './contentContainer.module.scss'
 
 const ContentContainer = ({ children }:{ children: ReactNode }) => {
 	return (

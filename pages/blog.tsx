@@ -8,7 +8,7 @@ import ContentContainer from 'components/layout/contentContainer/ContentContaine
 const Home = () => {
   return (
     <ContentContainer>
-        <h1> Hello </h1>
+        <h1> Blog </h1>
     </ContentContainer>
  
  )
