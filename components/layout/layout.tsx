@@ -2,6 +2,7 @@ import { ReactNode } from 'react'
 
 import MetaData from 'components/metadata/MetaData'
 import Navbar from 'components/navbar/Navbar'
+import Footer from 'components/footer/Footer'
 
 export const defaultMetaData = {
   title: 'RATEPUNK',
@@ -21,6 +22,7 @@ const Layout = ({
       <div>
         <Navbar/>
         {children}
+        <Footer/>
       </div>
     </div>
   )
