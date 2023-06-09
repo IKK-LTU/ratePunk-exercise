@@ -4,18 +4,20 @@ import LogoSvg from 'public/icons/logo.svg'
 
 import CopyRights from 'components/elements/copyRights/CopyRights'
 
+type DescriptionProps = {
+	text: string
+}
 
-
-const Description = () => {
+const Description = ({ text }: DescriptionProps) => {
 	return (
 		<div className={styles.container}>
 			<LogoSvg />
 
 			<p>
-				Ratepunk compares hotel room prices across the major online travel agencies. When you search for a room, Ratepunk extension scans the top booking sites and runs a price comparison, so you can be confident in knowing you're getting the best deal!
+				{text}
 			</p>
 
-			<div>
+			<div className={styles.copyRights}>
 				<CopyRights/>
 			</div>
 		</div>

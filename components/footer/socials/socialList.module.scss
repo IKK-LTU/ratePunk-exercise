@@ -1,0 +1,33 @@
+.container {
+	
+	.title {
+		margin-bottom: 1.6rem;
+		text-transform: uppercase;
+	}
+
+	ul {
+		display: inline-flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+
+		li {
+			cursor: pointer;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 2.2rem;
+			width: 2.2rem;
+			background-color:#4eb3e3;
+			border: 1px solid black;
+			border-radius: 6px;
+			transition: background-color .25s ease-in-out 0s;
+			&:hover {
+				background-color:#f8cc5d;
+			}
+			a {
+				height: 16px;
+			}
+		}
+	}
+
+}

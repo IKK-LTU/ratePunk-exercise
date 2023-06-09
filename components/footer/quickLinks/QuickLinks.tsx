@@ -3,25 +3,26 @@ import Link from 'next/link'
 
 import styles from './quickLinks.module.scss'
 
-const links = [
-	{title:'Price Comparison', url:'#'},
-	{title:'Chrome Extension', url:'/'},
-	{title:'Safari Extension', url:'#'},
-	{title:'Firefox Extension', url:'#'},
-	{title:'How It Works', url:'#'},
-	{title:'Ratepunk Blog', url:'/blog'}
-]
+type QuickListProps = {
+	title: string
+	listData: Array<
+		{
+			title: string
+			url: string
+		}
+	>
+}
 
-const QuickLinks = () => {
+const QuickLinks = ({title, listData}: QuickListProps) => {
 	const router = useRouter()
 	
 	return (
 		<div className={styles.container}>
 			<h2 className={styles.title}>
-				Quick Links
+				{title}
 			</h2>
 
-			{links.map(({ title, url })=>(
+			{listData.map(({ title, url })=>(
 				<Link
 				 key={title} 
 				 href={url} 
