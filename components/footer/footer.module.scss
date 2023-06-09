@@ -1,7 +1,7 @@
 .container {
 	background-color: rgb(248, 244, 249);
 	padding: 6rem 0;
-	
+
 	.contentWrapper {
 		display: flex;
 		justify-content: space-between;
@@ -11,9 +11,13 @@
 				text-transform: uppercase;
 				margin-bottom: 1.5rem;
 			}
-			img {
-				margin-right: 1.6rem;
-				color: black;
+			a {
+				display: flex;
+				align-items: center;
+				
+				svg {
+					margin-right: 1rem;
+				}
 			}
 		}
 	}

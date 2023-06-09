@@ -1,7 +1,3 @@
-import React from 'react'
-
-import Image from 'next/image'
-
 import styles from './description.module.scss'
 
 import LogoSvg from 'public/icons/logo.svg'
@@ -10,7 +6,7 @@ import CopyRights from 'components/elements/copyRights/CopyRights'
 
 
 
-const Deescription = () => {
+const Description = () => {
 	return (
 		<div className={styles.container}>
 			<LogoSvg />
@@ -26,4 +22,4 @@ const Deescription = () => {
 	)
 }
 
-export default Deescription
+export default Description

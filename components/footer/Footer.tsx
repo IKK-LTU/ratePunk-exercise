@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import ContentContainer from 'components/layout/contentContainer/ContentContainer'
 
-import Deescription from './description/Deescription'
+import Deescription from './description/Description'
 import QuickLinks from './quickLinks/QuickLinks'
 
 import styles from './footer.module.scss'
