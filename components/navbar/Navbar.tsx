@@ -8,8 +8,8 @@ import styles from './navbar.module.scss'
 
 import ContentContainer from 'components/layout/contentContainer/ContentContainer'
 
-import logosSvg from 'public/icons/logo.svg'
-import burgerMenuSvg from 'public/icons/menu.svg'
+import LogosSvg from 'public/icons/logo.svg'
+import BurgerMenuSvg from 'public/icons/menu.svg'
 
 const headerLinks: Array<{title:string , pathName: string}> = [
 	{ title: 'Chrome Extension', pathName: '/'},
@@ -27,7 +27,7 @@ const Navbar = () => {
 				<div className={styles.headerWrapper}>
 
 				<Link passHref href='/'>
-					<Image src={logosSvg} alt="ratepunk logo"/>
+					<LogosSvg />
 				</Link>
 
 					<ul className={styles.headerMenu}>
@@ -44,7 +44,7 @@ const Navbar = () => {
 					</ul>
 
 					<button className={styles.burgerMenu_button} >
-						<Image src={burgerMenuSvg} alt="burger menu icon"/>
+						<BurgerMenuSvg />
 					</button>
 				</div>
 			</ContentContainer>

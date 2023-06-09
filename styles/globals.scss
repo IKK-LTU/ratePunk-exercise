@@ -14,14 +14,18 @@ body {
 }
 
 body {
-  color: rgba(0,0,0);
+  color: rgb(31, 52, 62);
   background:  #f8cc5d;
 }
 
 a {
   text-decoration: none;
-  color: rgba(0,0,0);
+  color: rgb(31, 52, 62);
   white-space: nowrap;
+  &:hover {
+    color:#4eb3e3;
+    transition: color 0.25s ease-in-out;
+  }
 }
 
 li {
