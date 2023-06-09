@@ -2,8 +2,8 @@ import {ReactNode} from 'react';
 
 import styles from 'styles/Home.module.scss';
 
-import Layout from 'components/layout/layout';
-import ContentContainer from 'components/layout/contentContainer/ContentContainer'
+import Layout from 'components/layouts/layout';
+import ContentContainer from 'components/layouts/contentContainer/ContentContainer'
 
 const Home = () => {
   return (

@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 
 import styles from './navbar.module.scss'
 
-import ContentContainer from 'components/layout/contentContainer/ContentContainer'
+import ContentContainer from 'components/layouts/contentContainer/ContentContainer'
 
 import LogosSvg from 'public/icons/logo.svg'
 import BurgerMenuSvg from 'public/icons/menu.svg'
