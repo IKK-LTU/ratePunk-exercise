@@ -19,6 +19,9 @@ const Meta = ({
         rel="icon"
         href={favIcon.src}
       />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet"/>
       <meta
         name="description"
         content={description}

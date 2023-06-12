@@ -1,0 +1,30 @@
+.container {
+	display: flex;
+	flex-direction: row;
+	gap: 2rem;
+	align-items: center;
+	height: 140px;
+	.instructionBox {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
+		max-width: 255px; order:0;
+		.orderIndicatorText {
+			color: blue;
+			text-transform: uppercase;
+			font-size: 20px;
+		}
+		.title {
+			color: #1F343E;
+			text-transform: uppercase;
+			font-size: 32px;
+			font-family: 'Caveat Brush';
+		}
+		.description {
+			color: #1F343E;
+			font-size: 20px;
+		}
+	}
+}
+
