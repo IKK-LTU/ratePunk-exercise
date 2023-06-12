@@ -1,4 +1,4 @@
-import React from 'react'
+import {useState, useEffect} from 'react'
 
 import styles from './copyLinkInput.module.scss'
 
@@ -9,10 +9,19 @@ type CopyLinkInputProps = {
 }
 
 const CopyLinkInput = ({ link }: CopyLinkInputProps) => {
+	const [isCopied, setIsCopied] = useState<boolean>(false)
 
 	const onClickCopy = () => {
-		navigator.clipboard.writeText(link)
+		navigator.clipboard.writeText(link).then(() => setIsCopied(true))
 	}
+
+	useEffect(() => {
+		if(isCopied){
+			setTimeout(() => {
+				setIsCopied(false)
+			}, 1000);
+		}
+	},[isCopied])
 
 	return (
 		<>
@@ -22,6 +31,11 @@ const CopyLinkInput = ({ link }: CopyLinkInputProps) => {
 				</div>
 				
 				<div className={styles.linkBox}>
+				{isCopied &&
+					<p className={styles.tooltip}>
+						Link copied
+					</p>
+					}
 					<input
 						className={styles.getLinkInput}
 						name='referalLink'

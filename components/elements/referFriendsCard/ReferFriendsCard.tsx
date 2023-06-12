@@ -11,6 +11,8 @@ import CopyLinkInput from './copyLink/CopyLinkInput';
 import axiosClient from 'api/axiosClient';
 import { collectDataApi } from 'api/collectData';
 
+import LoaderSvg from 'public/icons/loaderCircle.svg'
+
 const validationSchema = Yup.object().shape({
 	email: Yup.string().email('Invalid email').required('Required'),
 });
@@ -22,8 +24,9 @@ const initialValues = {
 const ReferFriendsCard = () => {
 
 	const [ referalLink, setReferalLink] = useState<string>('')
-
 	const [apiError, setApiError] =  useState<string>('')
+	const [isLoading, setIsLoading] = useState<boolean>(false)
+
 
 // JSONBIN dont have put request :D. That's why i made this hack
 
@@ -31,6 +34,7 @@ const ReferFriendsCard = () => {
 		await collectDataApi.updateEmails(emailsArray)
 			.then(()=> { 
 				setReferalLink('https://ratepunk.com/referral');
+				setIsLoading(false)
 			}	
 			).catch(err => setApiError(err.message))
 	}
@@ -55,6 +59,7 @@ const ReferFriendsCard = () => {
 
 	const onSubmit = async (values: { email: string }) => {
 		if(values.email){
+			setIsLoading(true)
 			getEmails(values.email)
 		}
 	}
@@ -72,6 +77,7 @@ const ReferFriendsCard = () => {
 			<p className='error'>
 				{apiError}
 			</p>
+
 			{referalLink 
 			? <CopyLinkInput link={referalLink} />
 			: 
@@ -106,7 +112,7 @@ const ReferFriendsCard = () => {
 					</div>
 					
 					<button className={styles.getLinkButton} type="submit">
-						Get Referral Link
+						{isLoading ? <LoaderSvg className={styles.loadingSpinner}/> : 'Get Referral Link'}
 					</button>
          </form>
 				 )}

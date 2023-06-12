@@ -7,28 +7,38 @@
 	background: #F8F4F9;
 	border: 1px solid #1F343E;
 	border-radius: 16px;
-	padding: 4rem;
-	height: 581px;
+	padding: 2rem;
+	height: auto;
 	width: 100%;
-	@include media-desktop-up {    
+	@include media-desktop-up {
+		padding: 4rem;
 		width: 544px;
 		height: 797px;
 	}
 	.title {
 		font-family: 'Caveat Brush';
-		margin-bottom: 3rem;
+		margin-bottom: 2rem;
 		line-height: 4rem;
 		font-size: 48px;;
+		@include media-desktop-up {    
+			margin-bottom: 3rem;
+		}
 	}
 	.description {
-		margin-bottom: 3rem;
+		margin-bottom: 2rem;
 		font-size: 20px;
 		font-weight: 300;
 		color: #1F343E;
+		@include media-desktop-up {    
+			margin-bottom: 3rem;
+		}
 	}
 	.limitationText {
-		margin-top: auto;
+		margin-top: 2rem;
 		color: #6D7A80;
+		@include media-desktop-up {    
+			margin-top: auto;
+		}
 	}
 
 	.inputBox {
@@ -55,7 +65,7 @@
 
 		}
 	}
-
+	
 	.getLinkButton {
 		background: #4EB3E3;
 		border: 1px solid #1F343E;
@@ -68,5 +78,16 @@
 		border-radius: 8px;
 		margin-top: 1rem;
 	}
+}
+.loadingSpinner {
+	height: 20px;
+	width: 20px;
+	margin: auto;
+	margin-top: 5px;
+	animation: spinner 1s infinite linear;
+}
 
+@keyframes spinner {
+	from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
