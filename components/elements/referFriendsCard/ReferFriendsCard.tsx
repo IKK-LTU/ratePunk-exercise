@@ -8,7 +8,8 @@ import styles from './referFriendsCard.module.scss'
 import EmailSvg from 'public/icons/email.svg'
 import CopyLinkInput from './copyLink/CopyLinkInput';
 
-
+import axiosClient from 'api/axiosClient';
+import { collectDataApi } from 'api/collectData';
 
 const validationSchema = Yup.object().shape({
 	email: Yup.string().email('Invalid email').required('Required'),
@@ -22,8 +23,40 @@ const ReferFriendsCard = () => {
 
 	const [ referalLink, setReferalLink] = useState<string>('')
 
-	const onSubmit = () => {
-		setReferalLink('https://ratepunk.com/referral');
+	const [apiError, setApiError] =  useState<string>('')
+
+// JSONBIN dont have put request :D. That's why i made this hack
+
+	const putEmails = async (emailsArray: Array<string>) => {
+		await collectDataApi.updateEmails(emailsArray)
+			.then(()=> { 
+				setReferalLink('https://ratepunk.com/referral');
+			}	
+			).catch(err => setApiError(err.message))
+	}
+
+	const getEmails = async ( newEmail: string ) => {
+		if(newEmail){
+			await collectDataApi.getEmails()
+			.then((resp)=> {
+				const oldEmailsArray = resp.data.record
+				const isAlredyExist = resp.data.record.includes(newEmail)
+				
+				if(isAlredyExist) return putEmails(oldEmailsArray)
+
+				oldEmailsArray.push(newEmail)
+		
+				return putEmails(oldEmailsArray)
+			}	
+			).catch(err => setApiError(err.message))
+
+		}
+}
+
+	const onSubmit = async (values: { email: string }) => {
+		if(values.email){
+			getEmails(values.email)
+		}
 	}
 
 	return (
@@ -36,6 +69,12 @@ const ReferFriendsCard = () => {
 				Refer your friends to us and earn hotel booking vouchers. We'll give you 1 coin for each friend that installs our extension. Minimum cash-out at 20 coins.
 			</h4>
 
+			<p className='error'>
+				{apiError}
+			</p>
+			{referalLink 
+			? <CopyLinkInput link={referalLink} />
+			: 
 			<Formik
        initialValues={initialValues}
        onSubmit={onSubmit}
@@ -48,9 +87,7 @@ const ReferFriendsCard = () => {
          handleSubmit,
        }) => (
          <form onSubmit={handleSubmit}>
-					 {referalLink 
-			? <CopyLinkInput link={referalLink} />
-			: <>
+
 					<p className='error'>
 						{errors.email}
 					</p>
@@ -71,11 +108,10 @@ const ReferFriendsCard = () => {
 					<button className={styles.getLinkButton} type="submit">
 						Get Referral Link
 					</button>
-				</>
-			}
          </form>
-       )}
-     </Formik>
+				 )}
+				 </Formik>
+			}
 
 
 			<p className={styles.limitationText}>

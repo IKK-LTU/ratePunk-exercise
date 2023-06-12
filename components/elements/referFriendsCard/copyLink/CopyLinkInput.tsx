@@ -26,6 +26,7 @@ const CopyLinkInput = ({ link }: CopyLinkInputProps) => {
 						className={styles.getLinkInput}
 						name='referalLink'
 						type="text"
+						readOnly
 						value={link}
 						/>
 					<button 
