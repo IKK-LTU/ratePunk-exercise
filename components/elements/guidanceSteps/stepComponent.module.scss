@@ -1,17 +1,31 @@
+@use '/styles/mixins' as *;
+
+
 .container {
 	display: flex;
-	flex-direction: row;
-	gap: 2rem;
+	flex-direction: column;
 	align-items: center;
-	height: 140px;
+	flex-wrap: wrap;
+	gap: 2rem;
+	width: 100%;
+	@include media-desktop-up {    
+		flex-direction: row;
+		height: 140px;
+		width: auto;
+	}
 	.instructionBox {
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		justify-content: center;
 		height: 100%;
-		max-width: 255px; order:0;
+		max-width: 255px;
+		order:0;
+		text-align: center;
+		@include media-desktop-up {    
+			text-align: left;
+		}
 		.orderIndicatorText {
-			color: blue;
+			color: #4EB3E3;
 			text-transform: uppercase;
 			font-size: 20px;
 		}
@@ -20,6 +34,7 @@
 			text-transform: uppercase;
 			font-size: 32px;
 			font-family: 'Caveat Brush';
+			
 		}
 		.description {
 			color: #1F343E;
@@ -27,4 +42,9 @@
 		}
 	}
 }
-
+.reverseOrder {
+	flex-direction: column;
+	@include media-desktop-up {    
+		flex-direction: row-reverse;
+	}
+}

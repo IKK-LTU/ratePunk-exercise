@@ -1,4 +1,4 @@
-import {ReactNode} from 'react';
+import { ReactNode } from 'react';
 
 import styles from 'styles/Home.module.scss';
 
@@ -10,6 +10,7 @@ import StepComponent from 'components/elements/guidanceSteps/StepComponent';
 import InviteSvg from 'public/icons/invite.svg'
 import CollectCoinsSvg from 'public/icons/collect-coins.svg'
 import VoucherSvg from 'public/icons/voucher.svg'
+import ReferFriendsCard from 'components/elements/referFriendsCard/ReferFriendsCard';
 
 
 const stepsToGetReward = [
@@ -39,10 +40,15 @@ const Home = () => {
     <div>
 
     <ContentContainer>
-        <h1> Hello </h1>
-        {stepsToGetReward.map((props)=> (
-          <StepComponent key={props.orderText} {...props} />
-        ))}
+      <div className={styles.container}>
+          <ReferFriendsCard />
+        
+        <div className={styles.stepsBoxWrapper}>
+          {stepsToGetReward.map((props)=> (
+            <StepComponent key={props.orderText} {...props} />
+          ))}
+        </div>
+      </div>
     </ContentContainer>
     <AppsBanner />
     </div>

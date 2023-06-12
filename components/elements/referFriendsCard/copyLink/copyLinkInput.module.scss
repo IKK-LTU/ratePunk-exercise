@@ -1,0 +1,33 @@
+
+.successBox {
+	display: inline-flex;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+.linkBox {
+	.getLinkInput {
+		padding: 1rem 1.5rem;
+		background: #FFFFFF;
+		border: 1px solid #1F343E;
+		border-radius:  8px 0 0 8px ;
+		font-size: 20px;
+		width: 80%;
+		color: #6D7A80;
+	}
+}
+
+.copyButton {
+	background: #4EB3E3;
+	border: 1px solid #1F343E;
+	color: white;
+	font-size: 20px;
+	font-weight: 600;
+	font-family: "Noto Sans";
+	border-radius: 0 8px 8px 0;
+	height: 100%;
+	padding: 1rem;
+	width: 20%;
+	border-left-width: 0;
+}

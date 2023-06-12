@@ -12,10 +12,11 @@ type StepComponentProps = {
 
 const StepComponent = ({ icon, orderText, title, description, reverseOrder }: StepComponentProps) => {
 	return (
-		<div className={styles.container}
-		style={reverseOrder ? { flexDirection: 'row-reverse'} : undefined}
+		<div className={[styles.container, reverseOrder ? styles.reverseOrder : undefined].join(' ')}
 		>
+			<div>
 			{icon}
+			</div>
 
 			<div className={styles.instructionBox}>
 				<h3 className={styles.orderIndicatorText}>

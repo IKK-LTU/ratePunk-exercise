@@ -1,6 +1,4 @@
-import {ReactNode} from 'react';
-
-import styles from 'styles/Home.module.scss';
+import { ReactNode } from 'react';
 
 import Layout from 'components/layouts/layout';
 import ContentContainer from 'components/layouts/contentContainer/ContentContainer'
@@ -8,7 +6,11 @@ import ContentContainer from 'components/layouts/contentContainer/ContentContain
 const Home = () => {
   return (
     <ContentContainer>
-        <h1> Blog </h1>
+        <div style={{height:'80vh', padding: '3rem'}}>
+          <h1>
+            RatePunk blog page
+          </h1>
+        </div>
     </ContentContainer>
  
  )
