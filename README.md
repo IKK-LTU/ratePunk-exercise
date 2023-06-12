@@ -3,6 +3,7 @@
 - install node modules: npm install
 - run the project in a local terminal: npm run dev
 
+<img width="1710" alt="Screenshot 2023-06-12 at 21 12 53" src="https://github.com/IKK-LTU/ratePunk-exercise/assets/60364518/c2ea8e44-fda6-4fdf-9e8d-eb808e6ae069">
 
 
 <img width="1697" alt="Screenshot 2023-06-12 at 21 04 50" src="https://github.com/IKK-LTU/ratePunk-exercise/assets/60364518/2a02ae38-9ca3-46d2-81dc-8db995e64604">
